@@ -12,25 +12,40 @@ const router = createRouter({
     {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue'),
+      //  @/ =  src/  (絕對路徑的寫法)
+      component: () => import('@/views/AboutView.vue'),
     },
     {
       path: '/basic',
       name: 'basic',
-      component: () => import('../views/BasicView.vue'),
+      component: () => import('@/views/BasicView.vue'),
     },
     {
       path: '/calculator',
       name: 'calculator',
-      component: () => import('../views/CalculatorView.vue'),
+      component: () => import('@/views/CalculatorView.vue'),
     },
     {
       path: '/todolist',
       name: 'todolist',
-      component: () => import('../views/TodolistView.vue'),
+      component: () => import('@/views/TodolistView.vue'),
+    },
+    {
+      path: '/dynamicrouter',
+      name: 'dynamicrouter',
+      component: () => import('@/views/DynamicRouterView.vue'),
+      children: [
+        {
+          path: 'try/:id',
+          name: 'tryParams',
+          component: () => import('@/views/DynamicRouterView/TryParams.vue')
+        }
+      ],
+    },
+    {
+      path: '/:domain(.*)*',
+      name: 'NotFound',
+      component: () => import('@/views/Error404View.vue'),
     },
   ],
 })

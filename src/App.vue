@@ -4,39 +4,53 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <div class="container">
+    <header>
+      <img
+        alt="Vue logo"
+        class="logo"
+        src="@/assets/logo.svg"
+        width="50"
+        height="50"
+      />
 
-    <div class="wrapper">
-      <HelloWorld msg="Welcome My Vue Project!" />
+      <div class="wrapper">
+        <HelloWorld msg="Welcome My Vue Project!" />
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
+        <nav>
+          <RouterLink to="/">首頁</RouterLink>
+          <RouterLink to="/dynamicrouter">動態路由</RouterLink>
+          <RouterLink to="/">projectB</RouterLink>
+          <RouterLink to="/">projectC</RouterLink>
+          <RouterLink to="/about">關於我</RouterLink>
+        </nav>
+      </div>
+    </header>
 
-  <RouterView />
+    <RouterView class="routerview" />
+  </div>
 </template>
 
 <style scoped>
+
 header {
   line-height: 1.5;
   max-height: 100vh;
   justify-content: center;
+  position: unset;
+  margin-bottom: 2rem;
 }
 
 .logo {
   display: block;
-  margin: 0 auto 2rem;
+  margin: 2rem auto 0.6rem;
 }
 
 nav {
   width: 100%;
   font-size: 12px;
   text-align: center;
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
 }
 
 nav a.router-link-exact-active {
@@ -58,10 +72,17 @@ nav a:first-of-type {
 }
 
 @media (min-width: 1024px) {
+  .container {
+    width: 68vw;
+  }
+
   header {
     display: flex;
     place-items: center;
     padding-right: calc(var(--section-gap) / 2);
+    top: 0;
+    position: fixed;
+    margin: unset;
   }
 
   .logo {
@@ -79,8 +100,14 @@ nav a:first-of-type {
     margin-left: -1rem;
     font-size: 1rem;
 
-    padding: 1rem 0;
-    margin-top: 1rem;
+    padding-left: 0.3rem;
+    margin-top: 0.8rem;
+  }
+
+  .routerview {
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 0 3rem;
   }
 }
 </style>
