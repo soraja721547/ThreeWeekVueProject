@@ -2,7 +2,7 @@
   <div class="calculator">
 
     <h1>簡易計算機</h1>
-
+    <!-- <hr> -->
     <input type="number" v-model.number="num1" />
 
     <select v-model="operator">

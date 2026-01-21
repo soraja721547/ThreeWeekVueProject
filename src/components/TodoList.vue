@@ -11,7 +11,8 @@
 </template>
 
 <script setup>
-import TodoItem from '../components/TodoItem.vue'
+// @/ =  src/  (絕對路徑的寫法)
+import TodoItem from '@/components/TodoItem.vue'
 
 defineProps({
     todos: {

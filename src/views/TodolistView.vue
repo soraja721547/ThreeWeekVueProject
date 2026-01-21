@@ -1,6 +1,7 @@
 <template>
   <div class="todolist">
     <h1>Todo List</h1>
+    <!-- <hr> -->
     <div>
       <TodoInput
         v-model="newTodo"
@@ -18,8 +19,9 @@
 
 <script setup>
 import { ref } from 'vue'
-import TodoInput from '../components/TodoInput.vue'
-import TodoList from '../components/TodoList.vue'
+//  @/ =  src/  (絕對路徑的寫法)
+import TodoInput from '@/components/TodoInput.vue'
+import TodoList from '@/components/TodoList.vue'
 
 const newTodo = ref('')
 const todos = ref([])
