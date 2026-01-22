@@ -43,6 +43,16 @@ const router = createRouter({
       ],
     },
     {
+      path: '/tryaxios',
+      name: 'tryaxios',
+      component: () => import('@/views/TryAxiosView.vue'),
+    },
+    {
+      path: '/productslist',
+      name: 'productslist',
+      component: () => import('@/views/ProductsListView.vue'),
+    },
+    {
       path: '/:domain(.*)*',
       name: 'NotFound',
       component: () => import('@/views/Error404View.vue'),

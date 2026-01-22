@@ -20,8 +20,8 @@ import HelloWorld from './components/HelloWorld.vue'
         <nav>
           <RouterLink to="/">首頁</RouterLink>
           <RouterLink to="/dynamicrouter">動態路由</RouterLink>
-          <RouterLink to="/">projectB</RouterLink>
-          <RouterLink to="/">projectC</RouterLink>
+          <RouterLink to="/tryaxios">Axios</RouterLink>
+          <RouterLink to="/productslist">產品列表展示</RouterLink>
           <RouterLink to="/about">關於我</RouterLink>
         </nav>
       </div>
